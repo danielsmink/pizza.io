@@ -53,6 +53,10 @@ function drawPizza(x,y,color) {
     context.stroke();
 }
 
+function removePizza(pizza) {
+    drawPizza(pizza.x, pizza.y, 'white');
+}
+
 drawBoard();
 
 // To clear the grid, just call drawBoard()

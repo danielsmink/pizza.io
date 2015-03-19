@@ -1,5 +1,3 @@
-
-
 module.exports = function (http) {
     var io = require('socket.io')(http),
         models = require('./../models'),
@@ -16,11 +14,11 @@ module.exports = function (http) {
         io.emit('pizzas', pizzas);
         setInterval(function(){
             var pizzaId = Math.floor((Math.random() * numberOfPizzas) + 1) - 1;
-
-            pizzas[pizzaId].oldX = pizzas[pizzaId].x;
-            pizzas[pizzaId].oldY = pizzas[pizzaId].y;
-            pizzas[pizzaId].getLocation();
-            io.emit('singlepizza', pizzas[pizzaId]);
+            var pizza = pizzas[pizzaId];
+            
+            pizza.id = pizzaId;
+            pizza.getLocation();
+            io.emit('singlepizza', pizza);
         }, 1000);
     });
 }
