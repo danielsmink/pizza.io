@@ -1,9 +1,23 @@
 <html>
     <head>
-        <link rel="stylesheet" href="canvas.css">
+        <link rel="stylesheet" href="./css/canvas.css">
     </head>
     <body>
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="./js/canvas.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            var socket = io();
+            drawBoard();
+            socket.on('pizzas', function(pizzas){
+                $.each(pizzas, function(i, pizza){
+                    drawPizza(pizza.x, pizza.y, pizza.color);
+                });
+            });
+            socket.on('singlepizza', function(pizza){
+                drawPizza(pizza.oldX, pizza.oldY, 'white');
+                drawPizza(pizza.x, pizza.y, pizza.color);
+            });
+        </script>
     </body>
 </html>
