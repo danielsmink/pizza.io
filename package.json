@@ -1,0 +1,27 @@
+{
+  "name": "pizza.io",
+  "version": "0.1.0",
+  "description": "Pizza tracking service",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danielsmink/pizza.io.git"
+  },
+  "keywords": [
+    "pizza",
+    "delivery"
+  ],
+  "author": "d.smink@picturae.nl, h.lammers@picturae.nl",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielsmink/pizza.io/issues"
+  },
+  "homepage": "https://github.com/danielsmink/pizza.io",
+  "dependencies": {
+    "express": "^4.12.3",
+    "jade": "^1.9.2"
+  }
+}
