@@ -15,8 +15,9 @@ module.exports = function (http) {
         setInterval(function(){
             var pizzaId = Math.floor((Math.random() * numberOfPizzas) + 1) - 1;
             var pizza = pizzas[pizzaId];
-            
-            pizza.id = pizzaId;
+
+            pizza.oldX = pizza.x;
+            pizza.oldY = pizza.y;
             pizza.getLocation();
             io.emit('singlepizza', pizza);
         }, 1000);

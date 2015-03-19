@@ -8,16 +8,14 @@
         <script src="/socket.io/socket.io.js"></script>
         <script>
             var socket = io();
-            var pizzaArray = '';
             drawBoard();
             socket.on('pizzas', function(pizzas){
-                pizzaArray = pizzas;
                 $.each(pizzas, function(i, pizza){
                     drawPizza(pizza.x, pizza.y, pizza.color);
                 });
             });
             socket.on('singlepizza', function(pizza){
-                removePizza(pizzaArray[pizza.id]);
+                drawPizza(pizza.oldX, pizza.oldY, 'white');
                 drawPizza(pizza.x, pizza.y, pizza.color);
             });
         </script>
