@@ -22,6 +22,7 @@
   "homepage": "https://github.com/danielsmink/pizza.io",
   "dependencies": {
     "express": "^4.12.3",
-    "jade": "^1.9.2"
+    "jade": "^1.9.2",
+    "socket.io": "^1.3.5"
   }
 }
